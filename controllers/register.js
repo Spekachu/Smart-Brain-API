@@ -39,6 +39,9 @@ const handleRegister = (knex, bcrypt) => (req, res) => {
             });
         });
     })
+    .catch(error => {
+        res.status(400).json("unable to register")
+    });
 }
 
 module.exports = {
