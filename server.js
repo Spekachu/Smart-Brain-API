@@ -23,11 +23,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // GET ROUTES
-app.get('/', (req, res) => {
-    knex.select('*').from('users').then(data => {
-        res.json(data)
-    });
-})
+app.get('/', (req, res) => { res.send('It is working!') });
+
 app.get('/profile/:id', profile.handleProfileGet(knex));
 
 // POST ROUTES
