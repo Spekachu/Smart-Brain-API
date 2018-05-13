@@ -39,6 +39,6 @@ app.post('/imageurl', image.handleClarifaiApiCall());
 app.put('/image', image.handleImagePut(knex));
 
 // LISTEN
-app.listen(3001, () => {
-    console.log('app is running on 3001');
+app.listen(process.env.PORT || 3001, () => {
+    console.log(`app is running on ${process.env.PORT}`);
 })
