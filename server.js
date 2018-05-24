@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
+const path = require('path');
 const knex = require('knex')({
     client: 'pg',
     connection: {
@@ -34,6 +35,7 @@ app.post('/imageurl', image.handleClarifaiApiCall());
 app.put('/image', image.handleImagePut(knex));
 
 // LISTEN
-app.listen(process.env.PORT || 3001, () => {
-    console.log(`app is running on ${process.env.PORT}`);
+const myPort = process.env.PORT ? process.env.PORT : 3001;
+app.listen(myPort, () => {
+    console.log(`app is running on ${myPort}`);
 })
