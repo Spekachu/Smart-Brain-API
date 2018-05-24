@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
-const path = require('path');
 const knex = require('knex')({
     client: 'pg',
     connection: {
